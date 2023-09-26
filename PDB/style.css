@@ -9,7 +9,9 @@
 }
 
 body {
-    background: #a393eb;
+	height: 100vh;
+	width: 100%;
+	background: url('raidenBG.png') center/cover no-repeat;
 }
 
 .container {
@@ -20,7 +22,7 @@ body {
 }
 
 .box {
-    background: #fdfdfd;
+    background: transparent;
     display: flex;
     flex-direction: column;
     padding: 25px 25px;
