@@ -20,7 +20,7 @@
 
             // verify email
 
-            $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'")
+            $verify_query = mysqli_query($con,"SELECT Email FROM users WHERE Email='$email'");
 
             if(mysqli_num_rows($verify_query) !=0){
                 echo "<div class='message'>
@@ -31,12 +31,12 @@
             }
 
             else {
-                mysqli_query($con, "INSERT into users(Username, Email, Age, Password)VALUES('$username','$email', '$age', '$password')") or die("Error Occured.");
+                mysqli_query($con,"INSERT into users(Username, Email, Age, Password)VALUES('$username','$email', '$age', '$password')") or die("Error Occured.");
 
                 echo "<div class='message'>
                             <p>Registered Successfully!</p>
                             </div> <br>";
-                echo "<a href='index.php'><button class='button'>Login</button>"
+                echo "<a href='index.php'><button class='button'>Login</button>";
             }
 
             } else {
@@ -65,10 +65,10 @@
 
                 
                 <div class="field">
-                    <input type="submit" class="button" name="submit" value="Login" required>
+                    <input type="submit" class="button" name="submit" value="Register" required>
                 </div>
                 <div class="links">
-                    Already have an account? <a href="index.html">Login</a>
+                    Already have an account? <a href="index.php">Login.</a>
                 </div>
             </form>
         </div>

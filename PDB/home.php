@@ -7,5 +7,17 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+
+        <div class="right-links">
+            <a href="#" Change Profile></a>
+            <a href="index.php"><button class="button">Logout</button></a>
+        </div>
+    </div>
+    <main>
+    </main>
 </body>
 </html>
