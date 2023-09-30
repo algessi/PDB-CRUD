@@ -59,18 +59,18 @@ if (isset($_POST["submit"])) {
         <div class="row mb-3">
           <div class="col">
             <label class="form-label">Username:</label>
-            <input type="text" class="form-control" name="username" value="<?php echo $row['username'] ?>">
+            <input type="text" class="form-control" name="Username" value="<?php echo $row['Username'] ?>">
           </div>
 
           <div class="col">
             <label class="form-label">Email:</label>
-            <input type="text" class="form-control" name="last_name" value="<?php echo $row['email'] ?>">
+            <input type="text" class="form-control" name="Email" value="<?php echo $row['Email'] ?>">
           </div>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Age</label>
-          <input type="number" class="form-control" name="age" value="<?php echo $row['age'] ?>">
+          <input type="number" class="form-control" name="age" value="<?php echo $row['Age'] ?>">
         </div>
 
         <div>

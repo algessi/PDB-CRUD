@@ -25,6 +25,7 @@
                 if (is_array($row) && !empty($row)) {
                     $_SESSION['valid'] = $row['Email'];
                     $_SESSION['username'] = $row['Username'];
+                    $_SESSION['age'] = $row['Age'];
                     $_SESSION['id'] = $row['Id'];
                     
                     // Redirect to the home page after a successful login.

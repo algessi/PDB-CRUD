@@ -1,4 +1,8 @@
 <?php
+    session_start();
+?>
+
+<?php
 include "db_conn.php";
 ?>
 
@@ -10,6 +14,9 @@ include "db_conn.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="home.css">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -20,10 +27,16 @@ include "db_conn.php";
 </head>
 
 <body>
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: transparent;">
-    CRUD Application
-  </nav>
-
+  
+<div class="nav">
+  <div class="CRUD">
+    <p>CRUD</p>
+</div>
+<div class="right-links">
+    <a href="logout.php"><button class="button">Logout</button></a>
+  </div>
+</div>
+  
   <div class="container">
     <?php
     if (isset($_GET["msg"])) {
@@ -44,6 +57,7 @@ include "db_conn.php";
           <th scope="col">Username</th>
           <th scope="col">Age</th>
           <th scope="col">Email</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -53,13 +67,13 @@ include "db_conn.php";
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
           <tr>
-            <td><?php echo $row["id"]; ?></td>
-            <td><?php echo $row["username"]; ?></td>
-            <td><?php echo $row["age"]; ?></td>
-            <td><?php echo $row["email"]; ?></td>
+            <td><?php echo $row["ID"]; ?></td>
+            <td><?php echo $row["Username"]; ?></td>
+            <td><?php echo $row["Age"]; ?></td>
+            <td><?php echo $row["Email"]; ?></td>
             <td>
-              <a href="edit.php?id=<?php echo $row["id"]; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
-              <a href="delete.php?id=<?php echo $row["id"]; ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
+              <a href="edit.php?id=<?php echo $row["ID"]; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+              <a href="delete.php?id=<?php echo $row["ID"]; ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
             </td>
           </tr>
         <?php

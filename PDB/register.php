@@ -15,6 +15,7 @@
             if(isset($_POST['submit'])){
                 $username = $_POST['username'];
                 $email = $_POST['email'];
+                $age = $_POST['age'];
                 $password = $_POST['password'];
 
             // verify email
@@ -30,7 +31,7 @@
             }
 
             else {
-                mysqli_query($con,"INSERT into users(Username, Email, Password)VALUES('$username','$email','$password')") or die("Error Occured.");
+                mysqli_query($con,"INSERT into users(Username, Email, Age, Password)VALUES('$username','$email','$age','$password')") or die("Error Occured.");
 
                 echo "<div class='message'>
                             <p>Registered Successfully!</p>
@@ -50,6 +51,11 @@
                 <div class="field input">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" required>
+                </div>
+
+                <div class="field input">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" required>
                 </div>
 
                 <div class="field input">
